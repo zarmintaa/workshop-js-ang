@@ -6,14 +6,12 @@
 
 function pasanganTerbesar(num) {
   // you can only write your code here!
-  const angkaString = String(num); // Mengubah angka menjadi string
-  let pasanganTerbesar = Number(angkaString.slice(0, 2)); // Mengambil dua digit pertama sebagai pasangan terbesar sementara
+  const angkaString = String(num);
+  let pasanganTerbesar = Number(angkaString.slice(0, 2));
 
   for (let i = 1; i < angkaString.length - 1; i++) {
-    // Mengambil dua digit berikutnya sebagai pasangan sementara
     const pasanganSementara = Number(angkaString.slice(i, i + 2));
 
-    // Jika pasangan sementara lebih besar daripada pasangan terbesar, maka update pasangan terbesar
     if (pasanganSementara > pasanganTerbesar) {
       pasanganTerbesar = pasanganSementara;
     }

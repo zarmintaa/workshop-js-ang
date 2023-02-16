@@ -7,19 +7,16 @@
 
 function tentukanDeretAritmatika(arr) {
   // you can only write your code here!
-  const selisih = arr[1] - arr[0]; // Menghitung selisih antara elemen kedua dan pertama
+  const selisih = arr[1] - arr[0];
 
   for (var i = 1; i < arr.length - 1; i++) {
-    // Menghitung selisih antara elemen ke-i+1 dan ke-i
     const selisihBaru = arr[i + 1] - arr[i];
 
-    // Jika selisih tidak sama dengan selisih awal, maka bukan deret aritmatika
     if (selisihBaru !== selisih) {
       return false;
     }
   }
 
-  // Jika loop selesai dieksekusi tanpa mengembalikan false, maka array adalah deret aritmatika
   return true;
 }
 
