@@ -6,22 +6,20 @@
 
 function ubahHuruf(kata) {
   // you can only write your code here!
-  let newWord = kata;
-  for (const newWordKey in newWord) {
-    if (newWord[newWordKey] === "a") {
-      newWord[newWordKey] = "b";
-    } else if (newWord[newWordKey] === "c") {
-      newWord[newWordKey] = "d";
-    } else if (newWord[newWordKey] === "k") {
-      newWord[newWordKey] = "l";
-    } else if (newWord[newWordKey] === "z") {
-      newWord[newWordKey] = "a";
-    }
+  const huruf = "abcdefghijklmnopqrstuvwxyz"; // list huruf alfabet
+  let result = "";
+
+  for (let i = 0; i < kata.length; i++) {
+    const index = huruf.indexOf(kata[i]);
+    const nextIndex = (index + 1) % huruf.length; // modulo digunakan agar z akan menjadi a
+    result += huruf[nextIndex];
   }
-  return newWord;
+
+  return result;
 }
 
 // TEST CASES
+
 console.log(ubahHuruf("wow")); // xpx
 console.log(ubahHuruf("developer")); // efwfmpqfs
 console.log(ubahHuruf("javascript")); // kbwbtdsjqu
