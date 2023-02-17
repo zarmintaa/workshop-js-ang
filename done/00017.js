@@ -6,9 +6,9 @@
 
 function targetTerdekat(arr) {
   // you can only write your code here!
-  var oIndex = arr.indexOf("o");
-  var xIndex = arr.indexOf("x");
-  var distance = arr.length;
+  let oIndex = arr.indexOf("o");
+  const xIndex = arr.indexOf("x");
+  let distance = arr.length;
 
   // Jika tidak ditemukan karakter 'x', return 0
   if (xIndex === -1) {
@@ -18,7 +18,7 @@ function targetTerdekat(arr) {
   // Cari jarak terdekat dengan mencari nilai mutlak selisih index
   // antara karakter 'o' dan 'x'
   while (oIndex !== -1) {
-    var currentDistance = Math.abs(oIndex - xIndex);
+    const currentDistance = Math.abs(oIndex - xIndex);
     if (currentDistance < distance) {
       distance = currentDistance;
     }

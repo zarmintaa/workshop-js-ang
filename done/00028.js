@@ -6,7 +6,7 @@
 
 function checkAB(num) {
   // you can only write your code here!
-  let indexA = 0;
+  /*let indexA = 0;
   let indexB = 0;
 
   for (const i of num) {
@@ -19,11 +19,20 @@ function checkAB(num) {
         indexB = num.indexOf(i);
       }
     }
+  }*/
+
+  for (let i = 0; i < num.length; i++) {
+    if (num[i] === "a" && num[i + 4] === "b") {
+      return true;
+    } else if (num[i] === "b" && num[i + 4] === "a") {
+      return true;
+    }
   }
+  return false;
 
   // return { indexA, indexB };
-  const number = indexA - indexB;
-  return number > 3 || number > -3;
+  /*const number = indexA - indexB;
+  return number > 3 || number > -3;*/
 }
 
 // TEST CASES

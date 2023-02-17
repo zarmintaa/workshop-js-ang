@@ -9,7 +9,7 @@ function tentukanDeretAritmatika(arr) {
   // you can only write your code here!
   const selisih = arr[1] - arr[0];
 
-  for (var i = 1; i < arr.length - 1; i++) {
+  for (let i = 1; i < arr.length - 1; i++) {
     const selisihBaru = arr[i + 1] - arr[i];
 
     if (selisihBaru !== selisih) {

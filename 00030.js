@@ -22,6 +22,49 @@
 
 function shoppingTime(memberId, money) {
   // you can only write your code here!
+  let initMoney = money;
+  if (memberId === "") {
+    return "Mohon maaf, toko X hanya berlaku untuk member saja";
+  } else if (money < 50000) {
+    return "Mohon maaf, uang tidak cukup";
+  }
+
+  const brand = [
+    {
+      name: "Sepatu brand Stacattu",
+      price: 1500000,
+    },
+    {
+      name: "Baju brand Zoro",
+      price: 500000,
+    },
+    {
+      name: "Baju brand H&N",
+      price: 250000,
+    },
+    {
+      name: "Sweater brand Uniklooh",
+      price: 175000,
+    },
+    {
+      name: "Casing Handphone",
+      price: 50000,
+    },
+  ];
+
+  let buyCart = [];
+  brand.map((e) => {
+    if (money >= e.price) {
+      buyCart.push(e.name);
+      money -= e.price;
+    }
+  });
+  return {
+    memberId: memberId,
+    money: initMoney,
+    listPurchased: buyCart,
+    changeMoney: money,
+  };
 }
 
 // TEST CASES
